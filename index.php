@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BORGESVILLE | Início</title>
-    <link rel="stylesheet" href="style.css?v=12.0">
+    <link rel="stylesheet" href="style.css?v=14.0">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
             <a href="index.php" class="active">INÍCIO</a>
             <a href="bebidas.php">BEBIDAS</a>
             <a href="fones.php">FONES</a>
-            <a href="sobre.php">SOBRE</a>
+            <a href="#sobre">SOBRE</a>
         </div>
         <a href="login.php" class="btn-login">LOGIN / REGISTRO</a>
     </nav>
@@ -34,6 +34,7 @@
             <div class="hero-buttons">
                 <a href="bebidas.php" class="btn-primary">Explorar Bebidas</a>
                 <a href="fones.php" class="btn-secondary">Linha de Fones</a>
+                <a href="#sobre" class="btn-secondary">Sobre Nós</a>
             </div>
         </div>
     </div>
@@ -74,6 +75,18 @@
                         <div class="product-details">Pureza sonora e palco tridimensional.</div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO SOBRE NÓS INTEGRADA -->
+        <div id="sobre" class="secao-container" style="scroll-margin-top: 100px;">
+            <div class="titulo-pagina">
+                <h2>Nossa Herança Comercial</h2>
+                <p>Estabelecida sob preceitos de requinte, autenticidade e rigor técnico absoluto.</p>
+            </div>
+            <div class="sobre-texto">
+                <p>A BORGESVILLE nasceu com o objetivo de selecionar e entregar produtos que se destacam pela sua sofisticação e qualidade impecável. Nosso catálogo foi criado sob medida para atender paladares e exigências exclusivas.</p>
+                <p>Seja na escolha de um Whisky Single Malt raro ou na precisão acústica de um fone de ouvido de alta fidelidade, garantimos uma experiência premium e totalmente focada na satisfação de nossos clientes.</p>
             </div>
         </div>
 

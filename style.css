@@ -218,7 +218,7 @@ body {
 .hero-content {
     position: relative;
     z-index: 3;
-    max-width: 650px;
+    max-width: 750px;
 }
 
 .hero-tag {
@@ -251,6 +251,7 @@ body {
 .hero-buttons {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .btn-primary {
