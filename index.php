@@ -1,79 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORGESVILLE</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BORGESVILLE | Premium Store</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 <body>
 
-    <header class="navbar">
+    <nav class="navbar">
         <div class="header-left">
             <h1 class="brand-name">BORGESVILLE</h1>
             <div class="logo-placeholder">LOGO</div>
         </div>
-        <nav class="nav-links">
-            <a href="index.php" style="color: #d49a5b;">Início</a>
-            <a href="WHISKY.PHP">Whiskys</a>
-            <a href="VODKA.PHP">Vodkas</a>
-            <a href="LICORES.PHP">Licores</a>
-            <a href="FONES.PHP">Fones</a>
-            <a href="SOBRE.PHP">Sobre</a>
-        </nav>
-        <div class="header-right">
-            <a href="#" class="btn-login">Login / Registro</a>
+        <div class="nav-links">
+            <a href="index.php" class="active">Início</a>
+            <a href="#">Whiskys</a>
+            <a href="#">Vodkas</a>
+            <a href="#">Licores</a>
+            <a href="#">Fones</a>
+            <a href="#">Sobre</a>
         </div>
-    </header>
+        <a href="login.php" class="btn-login">Login / Registro</a>
+    </nav>
 
-    <main class="content">
-        <section class="product-section">
-            <div class="titulo-pagina">
-                <h2>Bebidas Premium</h2>
-                <p>Nossa coleção move-se automaticamente. Você também pode arrastar para explorar.</p>
-            </div>
+    <div class="content">
 
-            <div class="carousel-container" id="carousel">
-                <div class="carousel-track" id="track">
-                    <div class="product-card-carousel"><img src="bebida1.png" alt="Bebida 1"></div>
-                    <div class="product-card-carousel"><img src="bebida2.png" alt="Bebida 2"></div>
-                    <div class="product-card-carousel"><img src="bebida3.png" alt="Bebida 3"></div>
-                    <div class="product-card-carousel"><img src="bebida4.png" alt="Bebida 4"></div>
+        <div class="titulo-pagina">
+            <h2>Bebidas Premium</h2>
+            <p>Nossa coleção move-se automaticamente. Passe o mouse para pausar.</p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="product-card-carousel">
+                    <img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=400&q=80" alt="Bebida Premium 1">
+                </div>
+                <div class="product-card-carousel">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&q=80" alt="Bebida Premium 2">
+                </div>
+                <div class="product-card-carousel">
+                    <img src="https://images.unsplash.com/photo-1569529465841-dfedd8750056?auto=format&fit=crop&w=400&q=80" alt="Bebida Premium 3">
+                </div>
+                <div class="product-card-carousel">
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=400&q=80" alt="Bebida Premium 4">
+                </div>
+                
+                <div class="product-card-carousel">
+                    <img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=400&q=80" alt="Bebida Premium 1 Clone">
+                </div>
+                <div class="product-card-carousel">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&q=80" alt="Bebida Premium 2 Clone">
                 </div>
             </div>
-        </section>
-        
-        <div style="margin: 60px 0; border-bottom: 1px solid rgba(198, 134, 66, 0.15);"></div>
+        </div>
 
-        <section class="product-section-static">
-            <div class="titulo-pagina">
-                <h2>Eletrônicos & Áudio</h2>
-                <p>Qualidade sonora inigualável com nossa linha de fones over-ear</p>
-            </div>
-            <div class="whisky-grid">
-                <div class="whisky-card">
-                    <div class="whisky-image-wrapper">
-                        <img src="imagens/fone-premium.jpg" alt="Fone Bluetooth Premium">
-                    </div>
-                    <div class="whisky-details">
-                        <h3 class="whisky-title">Fone Bluetooth Premium Over-Ear</h3>
-                        <p class="whisky-price-tag">R$ 499,90</p>
-                        <a href="FONES.PHP" class="btn-detalhes">Ver Detalhes</a>
-                    </div>
+        <hr class="divisor-secao">
+
+        <div class="titulo-pagina">
+            <h2>Eletrônicos & Áudio</h2>
+            <p>Qualidade sonora inigualável com nossa linha de fones over-ear</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Fone Bluetooth Premium">
                 </div>
-                <div class="whisky-card">
-                    <div class="whisky-image-wrapper">
-                        <img src="imagens/fone-noise.jpg" alt="Fone Noise Cancelling Pro">
-                    </div>
-                    <div class="whisky-details">
-                        <h3 class="whisky-title">Fone Noise Cancelling Pro</h3>
-                        <p class="whisky-price-tag">R$ 899,00</p>
-                        <a href="FONES.PHP" class="btn-detalhes">Ver Detalhes</a>
-                    </div>
+                <div class="product-details">
+                    <h3 class="product-title">Fone Bluetooth Premium Over-Ear</h3>
+                    <div class="product-price">R$ 499,90</div>
+                    <a href="#" class="btn-action">Ver Detalhes</a>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=500&q=80" alt="Fone Noise Cancelling Pro">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Fone Noise Cancelling Pro</h3>
+                    <div class="product-price">R$ 899,00</div>
+                    <a href="#" class="btn-action">Ver Detalhes</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
