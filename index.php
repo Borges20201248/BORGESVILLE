@@ -15,9 +15,7 @@
         </div>
         <div class="nav-links">
             <a href="index.php" class="active">Início</a>
-            <a href="#">Whiskys</a>
-            <a href="#">Vodkas</a>
-            <a href="#">Licores</a>
+            <a href="#">Bebidas</a>
             <a href="#">Fones</a>
             <a href="#">Sobre</a>
         </div>

@@ -27,14 +27,19 @@ $fones = [
             <h1 class="brand-name">BORGESVILLE</h1>
             <div class="logo-placeholder">LOGO</div>
         </div>
-        <nav class="nav-links">
-            <a href="index.php">Início</a>
-            <a href="WHISKY.PHP">Whiskys</a>
-            <a href="VODKA.PHP">Vodkas</a>
-            <a href="LICORES.PHP">Licores</a>
-            <a href="FONES.PHP" style="color: #d49a5b;">Fones</a>
-            <a href="SOBRE.PHP">Sobre</a>
-        </nav>
+   <nav class="navbar">
+        <div class="header-left">
+            <h1 class="brand-name">BORGESVILLE</h1>
+            <div class="logo-placeholder">LOGO</div>
+        </div>
+        <div class="nav-links">
+            <a href="index.php" class="active">Início</a>
+            <a href="bebidas.php">Bebidas</a>
+            <a href="fones.php">Fones</a>
+            <a href="sobre.php">Sobre</a>
+        </div>
+        <a href="login.php" class="btn-login">Login / Registro</a>
+    </nav>
         <div class="header-right">
             <a href="#" class="btn-login">Login / Registro</a>
         </div>

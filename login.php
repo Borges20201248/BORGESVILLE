@@ -11,16 +11,15 @@
     <nav class="navbar">
         <div class="header-left">
             <h1 class="brand-name">BORGESVILLE</h1>
-            <div class="logo-placeholder">LOG</div>
+            <div class="logo-placeholder">LOGO</div>
         </div>
         <div class="nav-links">
-            <a href="index.php">INÍCIO</a>
-            <a href="#">WHISKYS</a>
-            <a href="#">VODKAS</a>
-            <a href="#">LICORES</a>
-            <a href="#">SOBRE</a>
+            <a href="index.php" class="active">Início</a>
+            <a href="bebidas.php">Bebidas</a>
+            <a href="fones.php">Fones</a>
+            <a href="sobre.php">Sobre</a>
         </div>
-        <a href="index.php" class="btn-login">VOLTAR</a>
+        <a href="login.php" class="btn-login">Login / Registro</a>
     </nav>
 
     <div class="content">
