@@ -15,11 +15,9 @@
         </div>
         <nav class="nav-links">
             <a href="index.php">Início</a>
-            <a href="WHISKY.PHP">Whiskys</a>
-            <a href="VODKA.PHP">Vodkas</a>
-            <a href="LICORES.PHP">Licores</a>
-            <a href="FONES.PHP">Fones</a>
-            <a href="SOBRE.PHP" style="color: #d49a5b;">Sobre</a>
+            <a href="bebidas.php">Bebidas</a>
+            <a href="fones.php">Fones</a>
+            <a href="sobre.php" style="color: #d49a5b;">Sobre</a>
         </nav>
         <div class="header-right">
             <a href="#" class="btn-login">Login / Registro</a>
