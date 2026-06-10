@@ -3,72 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORGESVILLE | Conta</title>
-    <link rel="stylesheet" href="style.css?v=3.0">
+    <title>BORGESVILLE | Acesso</title>
+    <link rel="stylesheet" href="style.css?v=16.0">
 </head>
-<body>
-
+<body> 
+    
     <nav class="navbar">
         <div class="header-left">
             <h1 class="brand-name">BORGESVILLE</h1>
-            <div class="logo-placeholder">LOGO</div>
+            <div class="logo-placeholder">LOG</div>
         </div>
         <div class="nav-links">
-            <a href="index.php" class="active">Início</a>
-            <a href="bebidas.php">Bebidas</a>
-            <a href="fones.php">Fones</a>
-            <a href="sobre.php">Sobre</a>
+            <a href="index.php">INÍCIO</a>
+            <a href="bebidas.php">BEBIDAS</a>
+            <a href="fones.php">FONES</a>
+            <a href="index.php#sobre">SOBRE</a>
         </div>
-        <a href="login.php" class="btn-login">Login / Registro</a>
+        <a href="login.php" class="btn-login active">LOGIN / REGISTRO</a>
     </nav>
 
-    <div class="content">
+    
+    <div class="login-wrapper">
+        <div class="auth-container">
+            
         
-        <div class="auth-box">
             <div class="auth-tabs">
-                <button class="tab-btn active" onclick="switchTab('login-form', this)">Entrar</button>
-                <button class="tab-btn" onclick="switchTab('register-form', this)">Registrar</button>
+                <button class="tab-btn active" onclick="switchTab('login')">Entrar</button>
+                <button class="tab-btn" onclick="switchTab('register')">Registrar</button>
             </div>
 
-            <form id="login-form" class="auth-form active" action="#" method="POST">
-                <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="email" name="email" required placeholder="seu@email.com">
+            
+            <form id="form-login" class="auth-form active" action="" method="POST">
+                <div class="input-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" name="email" placeholder="seu@email.com" required>
                 </div>
-                <div class="form-group">
-                    <label>Senha</label>
-                    <input type="password" name="senha" required placeholder="••••••••">
+                <div class="input-group">
+                    <label for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" name="senha" placeholder="••••••••" required>
                 </div>
                 <button type="submit" class="btn-auth">Entrar</button>
             </form>
 
-            <form id="register-form" class="auth-form" action="#" method="POST">
-                <div class="form-group">
-                    <label>Nome Completo</label>
-                    <input type="text" name="nome" required placeholder="Seu Nome">
+        
+            <form id="form-register" class="auth-form" action="" method="POST">
+                <div class="input-group">
+                    <label for="reg-nome">Nome Completo</label>
+                    <input type="text" id="reg-nome" name="nome" placeholder="Seu Nome" required>
                 </div>
-                <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="email" name="email" required placeholder="seu@email.com">
+                <div class="input-group">
+                    <label for="reg-email">E-mail</label>
+                    <input type="email" id="reg-email" name="email" placeholder="seu@email.com" required>
                 </div>
-                <div class="form-group">
-                    <label>Senha</label>
-                    <input type="password" name="senha" required placeholder="Nova senha">
+                <div class="input-group">
+                    <label for="reg-senha">Senha</label>
+                    <input type="password" id="reg-senha" name="senha" placeholder="Nova senha" required>
                 </div>
                 <button type="submit" class="btn-auth">Criar Conta</button>
             </form>
-        </div>
 
+        </div>
     </div>
 
-    <script>
-        function switchTab(formId, button) {
-            document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(formId).classList.add('active');
-            button.classList.add('active');
-        }
-    </script>
+    
 
 </body>
 </html>
