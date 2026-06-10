@@ -19,11 +19,11 @@
             <a href="fones.php">FONES</a>
             <a href="#sobre">SOBRE</a>
         </div>
-        <a href="login.php" class="btn-login">LOGIN / REGISTRO</a>
+        <a href="#auth-section" class="btn-login">LOGIN / REGISTRO</a>
     </nav>
 
     <div class="hero-banner">
-        <img src="" alt="" class="hero-bg-image">
+        <img src="imagens/banner.jpg" alt="" class="hero-bg-image">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <span class="hero-tag">Borgesville Heritage</span>
@@ -84,7 +84,48 @@
             </div>
         </div>
 
+        <div id="auth-section" class="login-wrapper" style="scroll-margin-top: 100px;">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" onclick="switchTab('login')">Entrar</button>
+                    <button class="tab-btn" onclick="switchTab('register')">Registrar</button>
+                </div>
+
+                <form id="login-form" class="auth-form active" action="processar_login.php" method="POST">
+                    <div class="input-group">
+                        <label for="login-email">E-mail</label>
+                        <input type="email" id="login-email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-senha">Senha</label>
+                        <input type="password" id="login-senha" name="senha" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn-auth">Entrar</button>
+                </form>
+
+                <form id="register-form" class="auth-form" action="processar_registro.php" method="POST">
+                    <div class="input-group">
+                        <label for="reg-nome">Nome Completo</label>
+                        <input type="text" id="reg-nome" name="nome" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-email">E-mail</label>
+                        <input type="email" id="reg-email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-senha">Senha</label>
+                        <input type="password" id="reg-senha" name="senha" placeholder="Nova senha" required>
+                    </div>
+                    <button type="submit" class="btn-auth">Criar Conta</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 
-</body>
-</html>
+    <footer style="background-color: #1a1a1a; border-top: 1px solid rgba(212, 154, 91, 0.2); padding: 30px 20px; text-align: center; margin-top: 50px;">
+        <p style="color: #d49a5b; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 10px;">BORGESVILLE HERITAGE</p>
+        <p style="color: #888888; font-size: 0.75rem;">&copy; 2026 Todos os direitos reservados. Elevando o padrão de sofisticação comercial.</p>
+    </footer>
+
+    
