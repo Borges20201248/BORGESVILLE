@@ -74,11 +74,12 @@ body {
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .btn-login:hover {
-    opacity: 0.8;
+    color: #f1b374;
+    opacity: 0.9;
 }
 
 .content {
@@ -265,11 +266,18 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 4px;
-    transition: background-color 0.2s ease;
+    display: inline-block;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-primary:hover {
     background-color: #f1b374;
+    color: #1e1e1e;
+}
+
+.btn-primary:active {
+    background-color: #b8824c;
+    transform: scale(0.98);
 }
 
 .btn-secondary {
@@ -282,12 +290,17 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
+    display: inline-block;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-secondary:hover {
     background-color: #d49a5b;
     color: #1e1e1e;
+}
+
+.btn-secondary:active {
+    transform: scale(0.98);
 }
 
 .login-wrapper {
@@ -325,11 +338,11 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
-    transition: color 0.2s, background-color 0.2s;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .tab-btn:hover {
-    color: #ffffff;
+    color: #d49a5b;
     background-color: rgba(212, 154, 91, 0.05);
 }
 
@@ -362,6 +375,7 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.5px;
+    text-align: left;
 }
 
 .input-group input {
@@ -393,7 +407,7 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 10px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s ease;
 }
 
 .btn-auth:hover {
@@ -401,7 +415,10 @@ body {
 }
 
 @media (max-width: 900px) {
-    .product-card { width: calc(50% - 10px); height: 400px; }
+    .product-card { 
+        width: calc(50% - 10px); 
+        height: 400px; 
+    }
 }
 
 @media (max-width: 768px) {

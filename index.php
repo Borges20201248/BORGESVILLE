@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BORGESVILLE | Início</title>
-    <link rel="stylesheet" href="style.css?v=14.0">
+    <link rel="stylesheet" href="style.css?v=21.0">
 </head>
 <body>
 
-    
     <nav class="navbar">
         <div class="header-left">
             <h1 class="brand-name">BORGESVILLE</h1>
@@ -38,7 +37,6 @@
         </div>
     </div>
 
-    
     <div class="content">
         
         <div class="secao-container">

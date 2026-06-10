@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BORGESVILLE | Acesso</title>
-    <link rel="stylesheet" href="style.css?v=19.0">
+    <link rel="stylesheet" href="style.css?v=21.0">
 </head>
 <body>
 
@@ -26,8 +26,8 @@
         <div class="auth-container">
             
             <div class="auth-tabs">
-                <button id="tab-login" class="tab-btn active" onclick="switchTab('login')">Entrar</button>
-                <button id="tab-register" class="tab-btn" onclick="switchTab('register')">Registrar</button>
+                <button id="tab-login" type="button" class="tab-btn active" onclick="switchTab('login')">Entrar</button>
+                <button id="tab-register" type="button" class="tab-btn" onclick="switchTab('register')">Registrar</button>
             </div>
 
             <form id="form-login" class="auth-form active" action="" method="POST">
