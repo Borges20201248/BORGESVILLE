@@ -290,6 +290,116 @@ body {
     color: #1e1e1e;
 }
 
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 110px);
+    padding: 20px;
+}
+
+.auth-container {
+    background-color: #2d2d2d;
+    border: 1px solid rgba(212, 154, 91, 0.2);
+    border-radius: 6px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(212, 154, 91, 0.1);
+    background-color: #1a1a1a;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.tab-btn:hover {
+    color: #ffffff;
+    background-color: rgba(212, 154, 91, 0.05);
+}
+
+.tab-btn.active {
+    color: #d49a5b;
+    border-bottom: 2px solid #d49a5b;
+    background-color: #2d2d2d;
+}
+
+.auth-form {
+    display: none;
+    padding: 35px 30px;
+}
+
+.auth-form.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    color: #cccccc;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    background-color: #1e1e1e;
+    border: 1px solid rgba(212, 154, 91, 0.4);
+    border-radius: 4px;
+    padding: 12px 15px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #d49a5b;
+    box-shadow: 0 0 8px rgba(212, 154, 91, 0.2);
+}
+
+.btn-auth {
+    background-color: #d49a5b;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 4px;
+    padding: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-auth:hover {
+    background-color: #f1b374;
+}
+
 @media (max-width: 900px) {
     .product-card { width: calc(50% - 10px); height: 400px; }
 }
