@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    
     <nav class="navbar">
         <div class="header-left">
             <h1 class="brand-name">BORGESVILLE</h1>
@@ -23,7 +23,6 @@
         <a href="login.php" class="btn-login">LOGIN / REGISTRO</a>
     </nav>
 
-    <!-- ÁREA DE IMAGEM GRANDE (HERO BANNER) -->
     <div class="hero-banner">
         <img src="" alt="" class="hero-bg-image">
         <div class="hero-overlay"></div>
@@ -39,10 +38,9 @@
         </div>
     </div>
 
-    <!-- CONTEÚDO PRINCIPAL -->
+    
     <div class="content">
         
-        <!-- BLOCO DE DESTAQUE INSTITUCIONAL -->
         <div class="secao-container">
             <div class="titulo-pagina">
                 <h2>A Experiência Borgesville</h2>
@@ -54,7 +52,6 @@
             </div>
         </div>
 
-        <!-- VITRINE RÁPIDA DE AMOSTRAS (SEM PREÇOS) -->
         <div class="secao-container">
             <div class="titulo-pagina">
                 <h2>Amostras de Prestígio</h2>
@@ -78,7 +75,6 @@
             </div>
         </div>
 
-        <!-- SEÇÃO SOBRE NÓS INTEGRADA -->
         <div id="sobre" class="secao-container" style="scroll-margin-top: 100px;">
             <div class="titulo-pagina">
                 <h2>Nossa Herança Comercial</h2>
