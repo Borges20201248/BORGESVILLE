@@ -2,7 +2,7 @@
 
     <div class="content">
         
-     
+       
         <div class="secao-container">
             <div class="titulo-pagina">
                 <h2>Whiskys</h2>
@@ -48,14 +48,14 @@
             </div>
         </div>
 
-       
+      
         <div class="secao-container">
             <div class="titulo-pagina">
                 <h2>Vodkas</h2>
                 <p>As melhores Vodkas importadas e nacionais</p>
             </div>
-            <div class="produtos-wrapper">
-                <div class="product-card">
+            <div class="produtos-wrapper" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div class="product-card" style="max-width: calc(25% - 15px); flex: 1; min-width: 220px;">
                     <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
                         <img src="img/vodka 1.jpg" alt="Vodka Importada Black" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
                     </div>
@@ -64,7 +64,7 @@
                         <div class="product-price">R$ 189,90</div>
                     </div>
                 </div>
-                <div class="product-card">
+                <div class="product-card" style="max-width: calc(25% - 15px); flex: 1; min-width: 220px;">
                     <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
                         <img src="img/vodka 2.jpg" alt="Vodka Ultra Premium" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
                     </div>
@@ -73,7 +73,7 @@
                         <div class="product-price">R$ 265,00</div>
                     </div>
                 </div>
-                <div class="product-card">
+                <div class="product-card" style="max-width: calc(25% - 15px); flex: 1; min-width: 220px;">
                     <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
                         <img src="img/vodka 3.jpg" alt="Vodka Infused Red Berry" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
                     </div>
@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        
+    
         <div class="secao-container">
             <div class="titulo-pagina">
                 <h2>Licores</h2>
