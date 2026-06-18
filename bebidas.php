@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORGESVILLE | Bebidas</title>
-    <link rel="stylesheet" href="style.css?v=8.0">
-</head>
-<body>
-
-    <nav class="navbar">
-        <div class="header-left">
-            <h1 class="brand-name">BORGESVILLE</h1>
-            <div class="logo-placeholder">LOG</div>
-        </div>
-        <div class="nav-links">
-            <a href="index.php">INÍCIO</a>
-            <a href="bebidas.php" class="active">BEBIDAS</a>
-            <a href="fones.php">FONES</a>
-            <a href="sobre.php">SOBRE</a>
-        </div>
-        <a href="login.php" class="btn-login">LOGIN / REGISTRO</a>
-    </nav>
+<?php include 'header.php'; ?>
 
     <div class="content">
-
+        
+     
         <div class="secao-container">
             <div class="titulo-pagina">
                 <h2>Whiskys</h2>
@@ -31,22 +10,45 @@
             </div>
             <div class="produtos-wrapper">
                 <div class="product-card">
-                    <div class="product-image-wrapper">Sem Imagem</div>
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/whisky 1.jpg" alt="Whisky Premium Gold" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
                     <div class="product-info">
                         <div class="product-title">Whisky Premium Gold</div>
                         <div class="product-price">R$ 299,90</div>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image-wrapper">Sem Imagem</div>
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/whisky 2.jpg" alt="Whisky Single Malt" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
                     <div class="product-info">
                         <div class="product-title">Whisky Single Malt</div>
                         <div class="product-price">R$ 450,00</div>
                     </div>
                 </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/whisky 3.jpg" alt="Whisky Double Cask" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Whisky Double Cask</div>
+                        <div class="product-price">R$ 520,00</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/whisky 7.jpg" alt="Whisky Aged 12 Years" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Whisky Aged 12 Years</div>
+                        <div class="product-price">R$ 389,90</div>
+                    </div>
+                </div>
             </div>
         </div>
 
+       
         <div class="secao-container">
             <div class="titulo-pagina">
                 <h2>Vodkas</h2>
@@ -54,15 +56,36 @@
             </div>
             <div class="produtos-wrapper">
                 <div class="product-card">
-                    <div class="product-image-wrapper">Sem Imagem</div>
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/vodka 1.jpg" alt="Vodka Importada Black" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
                     <div class="product-info">
                         <div class="product-title">Vodka Importada Black</div>
                         <div class="product-price">R$ 189,90</div>
                     </div>
                 </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/vodka 2.jpg" alt="Vodka Ultra Premium" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Vodka Ultra Premium</div>
+                        <div class="product-price">R$ 265,00</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/vodka 3.jpg" alt="Vodka Infused Red Berry" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Vodka Infused Red Berry</div>
+                        <div class="product-price">R$ 145,00</div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        
         <div class="secao-container">
             <div class="titulo-pagina">
                 <h2>Licores</h2>
@@ -70,15 +93,45 @@
             </div>
             <div class="produtos-wrapper">
                 <div class="product-card">
-                    <div class="product-image-wrapper">Sem Imagem</div>
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/licor 1.jpg" alt="Licor Fino de Ervas" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
                     <div class="product-info">
                         <div class="product-title">Licor Fino de Ervas</div>
                         <div class="product-price">R$ 149,90</div>
                     </div>
                 </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/licor 2.jpg " alt="Licor de Café Premium" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Licor de Café Premium</div>
+                        <div class="product-price">R$ 135,00</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/licor 3.jpg" alt="Licor Cream Triple Sec" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Licor Cream Triple Sec</div>
+                        <div class="product-price">R$ 168,00</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper" style="height: 320px !important; padding: 0; overflow: hidden; background: none; border: none;">
+                        <img src="img/licor 4.jpg" alt="Licor Almond Amaretto" style="width: 100%; height: 100%; object-fit: contain; background-color: #151515; border-radius: 4px;">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Licor Almond Amaretto</div>
+                        <div class="product-price">R$ 185,00</div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

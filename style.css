@@ -105,7 +105,7 @@ body {
 }
 
 .titulo-pagina p {
-    color: #b3b3b3;
+    color: #e0e0e0;
     font-size: 0.9rem;
     margin-bottom: 30px;
 }
@@ -161,7 +161,8 @@ body {
 
 .product-details {
     font-size: 0.75rem;
-    color: #a0a0a0;
+    color: #ffffff;
+    opacity: 0.9;
     margin-bottom: 10px;
     line-height: 1.3;
 }
@@ -171,6 +172,35 @@ body {
     color: #d49a5b;
     font-weight: 700;
     margin-top: 5px;
+}
+
+.fones-container .produtos-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.fones-container .product-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 32% !important;
+    height: auto;
+    min-height: 380px;
+}
+
+.fones-container .product-image-wrapper {
+    height: 260px !important;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.faq-item {
+    background: #151515;
+    border-left: 3px solid #d49a5b;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 0 4px 4px 0;
 }
 
 .sobre-texto {
@@ -414,6 +444,12 @@ body {
     background-color: #f1b374;
 }
 
+@media (max-width: 992px) {
+    .fones-container .product-card {
+        max-width: 48% !important;
+    }
+}
+
 @media (max-width: 900px) {
     .product-card { 
         width: calc(50% - 10px); 
@@ -426,6 +462,12 @@ body {
     .hero-banner { height: auto; padding: 60px 20px; }
     .hero-overlay { background: rgba(30, 30, 30, 0.85); }
     .hero-buttons { flex-direction: column; }
+}
+
+@media (max-width: 576px) {
+    .fones-container .product-card {
+        max-width: 100% !important;
+    }
 }
 
 @media (max-width: 550px) {
