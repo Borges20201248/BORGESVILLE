@@ -20,7 +20,7 @@
             <div class="row align-items-center justify-content-center g-4">
                 <div class="col-12 col-md-5 d-flex justify-content-center">
                     <div style="width: 280px; height: 360px; border: 2px solid #d49a5b; background: radial-gradient(circle, #261f1b 0%, #120f0d 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
-                        <img src="imagens/luis.jpg" alt="Luis Eduardo Borges" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top:0; left:0;">
+                        <img src="img/borges 1.jpg" alt="Luis Eduardo Borges" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top:0; left:0;">
                     </div>
                 </div>
 
@@ -37,19 +37,20 @@
             </div>
         </div>
 
+    
         <div class="container text-center my-5 p-4" style="background: rgba(23, 19, 17, 0.6); border: 1px solid rgba(198, 134, 66, 0.1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
             <div class="row g-3 justify-content-center">
                 <div class="col-12 col-sm-4">
                     <h5 class="fw-bold display-6" style="color: #d49a5b;">100%</h5>
-                    <p class="text-uppercase text-muted small px-2">Rótulos Originais</p>
+                    <p class="text-uppercase small px-2" style="color: #d49a5b; font-weight: 600; margin-bottom: 0;">Rótulos Originais</p>
                 </div>
                 <div class="col-12 col-sm-4">
                     <h5 class="fw-bold display-6" style="color: #d49a5b;">Exclusivo</h5>
-                    <p class="text-uppercase text-muted small px-2">Atendimento Apenas no Paraná</p>
+                    <p class="text-uppercase small px-2" style="color: #d49a5b; font-weight: 600; margin-bottom: 0;">Atendimento Apenas no Paraná</p>
                 </div>
                 <div class="col-12 col-sm-4">
                     <h5 class="fw-bold display-6" style="color: #d49a5b;">Foco</h5>
-                    <p class="text-uppercase text-muted small px-2">Atendimento de Ponta</p>
+                    <p class="text-uppercase small px-2" style="color: #d49a5b; font-weight: 600; margin-bottom: 0;">Atendimento de Ponta</p>
                 </div>
             </div>
         </div>

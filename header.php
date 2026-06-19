@@ -14,10 +14,13 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="border-bottom: 2px solid #d49a5b; min-height: 70px;">
     <div class="container-fluid px-4">
-        <div class="header-left d-flex align-items-center gap-3">
+       
+        <a href="index.php" class="header-left d-flex align-items-center gap-2" style="text-decoration: none;">
+       
+            <img src="img/logo.jpg" alt="Logo Borgesville" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: 1px solid #d49a5b;">
+          
             <h1 class="brand-name m-0" style="color: #d49a5b; font-weight: 700; font-size: 1.4rem; letter-spacing: 2px;">BORGESVILLE</h1>
-            <div class="logo-placeholder" style="border: 1px solid #d49a5b; padding: 2px 6px; font-size: 0.7rem; color: #d49a5b;">LOG</div>
-        </div>
+        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: rgba(212, 154, 91, 0.5);">
             <span class="navbar-toggler-icon"></span>
