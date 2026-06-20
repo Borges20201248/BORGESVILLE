@@ -1,6 +1,7 @@
 <?php
-include 'conexao.php';
-include 'funcoes.php'; 
+require_once 'conexao.php';
+require_once 'funcoes.php';
+include 'header.php';
 
 try {
     $whiskys = processarEFiltrarProdutos($pdo, 5);
@@ -10,8 +11,6 @@ try {
     die("Erro ao buscar dados: " . $e->getMessage());
 }
 ?>
-<?php include 'header.php'; ?>
-
 <div class="content">
     
     <div class="secao-container" style="margin-bottom: 50px;">

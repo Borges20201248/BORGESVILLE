@@ -1,14 +1,15 @@
 <?php
-include 'conexao.php';
-include 'funcoes.php'; 
+require_once 'conexao.php';
+require_once 'funcoes.php';
+include 'header.php';
 
 try {
+  
     $fones = processarEFiltrarProdutos($pdo, 4);
 } catch (PDOException $e) {
     die("Erro ao buscar dados: " . $e->getMessage());
 }
 ?>
-<?php include 'header.php'; ?>
 
 <div class="content">
     <div class="secao-container">
@@ -16,6 +17,7 @@ try {
             <h2>Fones de Ouvido</h2>
             <p>A melhor experiência sonora e alta definição</p>
         </div>
+        
         <div class="produtos-wrapper">
             <?php if (empty($fones)): ?>
                 <p style="color: #ffffff; opacity: 0.7;">Nenhum fone cadastrado no momento.</p>

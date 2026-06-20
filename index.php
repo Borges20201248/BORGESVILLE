@@ -1,5 +1,8 @@
-<?php include 'header.php'; ?>
-
+<?php
+require_once 'conexao.php';
+require_once 'funcoes.php'; 
+include 'header.php';
+?>
     <div class="hero-banner">
         <div class="hero-overlay"></div>
         <div class="hero-content">

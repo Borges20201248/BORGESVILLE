@@ -1,5 +1,8 @@
-<?php include 'header.php'; ?>
-
+<?php
+require_once 'conexao.php';
+require_once 'funcoes.php'; 
+include 'header.php';
+?>
     <main class="content">
         <div class="titulo-pagina">
             <h2>A BORGESVILLE</h2>
