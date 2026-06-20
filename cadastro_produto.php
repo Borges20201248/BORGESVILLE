@@ -4,77 +4,96 @@ include 'funcoes.php';
 
 $mensagem = "";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome'] ?? '';
-    $preco = $_POST['preco'] ?? 0;
-    $descricao = $_POST['descricao'] ?? '';
-    $imagem = $_POST['imagem'] ?? 'img/default.png';
-    $id_categoria = $_POST['id_categoria'] ?? null;
-    $tags_selecionadas = $_POST['tags'] ?? [];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadastrar'])) {
+    $nome = $_POST['nome'];
+    $preco = str_replace(',', '.', $_POST['preco']);
+    $id_categoria = intval($_POST['id_categoria']);
+    $imagem = $_POST['imagem'];
+    $descricao = $_POST['descricao'];
+    $tags_selecionadas = isset($_POST['tags']) ? $_POST['tags'] : [];
 
-    if (!empty($nome) && !empty($preco) && !empty($id_categoria)) {
-        try {
-            $sql_prod = "INSERT INTO produtos (nome, preco, imagem, descricao, id_categoria) 
-                         VALUES (:nome, :preco, :imagem, :descricao, :id_categoria)";
-            
-            $stmt = $pdo->prepare($sql_prod);
-            $stmt->execute([
-                ':nome' => $nome,
-                ':preco' => $preco,
-                ':imagem' => $imagem,
-                ':descricao' => $descricao,
-                ':id_categoria' => $id_categoria
-            ]);
+    try {
+        $pdo->beginTransaction();
 
-            $id_produto_novo = $pdo->lastInsertId();
+        $sql_produto = "INSERT INTO produtos (nome, preco, imagem, descricao, id_categoria) 
+                        VALUES (:nome, :preco, :imagem, :descricao, :id_categoria)";
+        $stmt = $pdo->prepare($sql_produto);
+        $stmt->execute([
+            ':nome' => $nome,
+            ':preco' => $preco,
+            ':imagem' => $imagem,
+            ':descricao' => $descricao,
+            ':id_categoria' => $id_categoria
+        ]);
 
-            if (!empty($tags_selecionadas)) {
-                $sql_tag = "INSERT INTO produto_tags (id_produto, id_tag) VALUES (:id_produto, :id_tag)";
-                $stmt_tag = $pdo->prepare($sql_tag);
+        $id_produto = $pdo->lastInsertId();
 
-                foreach ($tags_selecionadas as $id_tag) {
-                    $stmt_tag->execute([
-                        ':id_produto' => $id_produto_novo,
-                        ':id_tag' => $id_tag
-                    ]);
-                }
+        if (!empty($tags_selecionadas)) {
+            $sql_tag = "INSERT INTO produto_tags (id_produto, id_tag) VALUES (:id_produto, :id_tag)";
+            $stmt_tag = $pdo->prepare($sql_tag);
+            foreach ($tags_selecionadas as $id_tag) {
+                $stmt_tag->execute([':id_produto' => $id_produto, ':id_tag' => $id_tag]);
             }
-
-            $mensagem = "<div class='alert alert-success'>Produto cadastrado com sucesso!</div>";
-
-        } catch (PDOException $e) {
-            $mensagem = "<div class='alert alert-danger'>Erro ao salvar: " . $e->getMessage() . "</div>";
         }
-    } else {
-        $mensagem = "<div class='alert alert-warning'>Preencha todos os campos obrigatórios.</div>";
+
+        $pdo->commit();
+        $mensagem = "<div style='color: #0f5132; background-color: #d1e7dd; padding: 15px; border-radius: 4px; margin-bottom: 20px;'>Produto cadastrado com sucesso!</div>";
+    } catch (PDOException $e) {
+        $pdo->rollBack();
+        $mensagem = "<div style='color: #842029; background-color: #f8d7da; padding: 15px; border-radius: 4px; margin-bottom: 20px;'>Erro ao cadastrar: " . $e->getMessage() . "</div>";
     }
 }
 
-$categorias = $pdo->query("SELECT * FROM categorias")->fetchAll(PDO::FETCH_ASSOC);
-$tags = $pdo->query("SELECT * FROM tags")->fetchAll(PDO::FETCH_ASSOC);
+if (isset($_GET['excluir'])) {
+    $id_produto = intval($_GET['excluir']);
+
+    try {
+        $sql_delete = "DELETE FROM produtos WHERE id = :id";
+        $stmt = $pdo->prepare($sql_delete);
+        $stmt->execute([':id' => $id_produto]);
+
+        $mensagem = "<div style='color: #0f5132; background-color: #d1e7dd; padding: 15px; border-radius: 4px; margin-bottom: 20px;'>Produto removido com sucesso!</div>";
+    } catch (PDOException $e) {
+        $mensagem = "<div style='color: #842029; background-color: #f8d7da; padding: 15px; border-radius: 4px; margin-bottom: 20px;'>Erro ao remover: " . $e->getMessage() . "</div>";
+    }
+}
+
+$categorias = $pdo->query("SELECT * FROM categorias ORDER BY nome ASC")->fetchAll(PDO::FETCH_ASSOC);
+$tags = $pdo->query("SELECT * FROM tags ORDER BY nome ASC")->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_produtos = "SELECT p.id, p.nome, p.preco, c.nome AS categoria 
+                 FROM produtos p 
+                 INNER JOIN categorias c ON p.id_categoria = c.id 
+                 ORDER BY p.id DESC";
+$produtos = $pdo->query($sql_produtos)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php include 'header.php'; ?>
 
-<div class="content container mt-5" style="max-width: 600px; color: #ffffff; background-color: #151515; padding: 30px; border-radius: 8px;">
-    <h2 class="mb-4 text-center">Registrar Novo Produto</h2>
+<div class="content" style="max-width: 800px; color: #ffffff; background-color: #151515; padding: 30px; border-radius: 8px; margin: 40px auto; font-family: sans-serif;">
+    
+    <h2 style="color: #ffc107; text-align: center; margin-bottom: 25px;">Painel de Produtos (Borgesville)</h2>
     
     <?php echo $mensagem; ?>
 
-    <form action="cadastro_produto.php" method="POST">
-        <div class="mb-3">
-            <label for="nome" class="form-label">Nome do Produto *</label>
-            <input type="text" class="form-control" id="nome" name="nome" required style="background-color: #222; color: #fff; border: 1px solid #444;">
+    <h3 style="color: #ffffff; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px;">Registrar Novo Produto</h3>
+    
+    <form action="cadastro_produto.php" method="POST" style="margin-bottom: 50px;">
+        <input type="hidden" name="cadastrar" value="1">
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Nome do Produto *</label>
+            <input type="text" name="nome" required style="width: 100%; padding: 10px; background-color: #222; border: 1px solid #444; color: #fff; border-radius: 4px;">
         </div>
 
-        <div class="mb-3">
-            <label for="preco" class="form-label">Preço (R$) *</label>
-            <input type="number" step="0.01" class="form-control" id="preco" name="preco" required style="background-color: #222; color: #fff; border: 1px solid #444;">
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Preço (R$) *</label>
+            <input type="text" name="preco" required style="width: 100%; padding: 10px; background-color: #222; border: 1px solid #444; color: #fff; border-radius: 4px;">
         </div>
 
-        <div class="mb-3">
-            <label for="id_categoria" class="form-label">Categoria *</label>
-            <select class="form-select" id="id_categoria" name="id_categoria" required style="background-color: #222; color: #fff; border: 1px solid #444;">
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Categoria *</label>
+            <select name="id_categoria" required style="width: 100%; padding: 10px; background-color: #222; border: 1px solid #444; color: #fff; border-radius: 4px;">
                 <option value="">Selecione uma categoria</option>
                 <?php foreach ($categorias as $cat): ?>
                     <option value="<?php echo $cat['id']; ?>"><?php echo htmlspecialchars($cat['nome']); ?></option>
@@ -82,32 +101,64 @@ $tags = $pdo->query("SELECT * FROM tags")->fetchAll(PDO::FETCH_ASSOC);
             </select>
         </div>
 
-        <div class="mb-3">
-            <label for="imagem" class="form-label">Caminho da Imagem</label>
-            <input type="text" class="form-control" id="imagem" name="imagem" style="background-color: #222; color: #fff; border: 1px solid #444;">
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Caminho da Imagem *</label>
+            <input type="text" name="imagem" required style="width: 100%; padding: 10px; background-color: #222; border: 1px solid #444; color: #fff; border-radius: 4px;">
         </div>
 
-        <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            <textarea class="form-control" id="descricao" name="descricao" rows="3" style="background-color: #222; color: #fff; border: 1px solid #444;"></textarea>
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Descrição</label>
+            <textarea name="descricao" rows="3" style="width: 100%; padding: 10px; background-color: #222; border: 1px solid #444; color: #fff; border-radius: 4px; resize: vertical;"></textarea>
         </div>
 
-        <div class="mb-4">
-            <label class="form-label d-block">Tags do Produto</label>
-            <?php foreach ($tags as $tag): ?>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="tags[]" value="<?php echo $tag['id']; ?>" id="tag_<?php echo $tag['id']; ?>">
-                    <label class="form-check-label" for="tag_<?php echo $tag['id']; ?>">
-                        <?php echo htmlspecialchars($tag['nome']); ?>
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 5px;">Tags do Produto</label>
+            <div style="display: flex; gap: 15px;">
+                <?php foreach ($tags as $tag): ?>
+                    <label style="cursor: pointer;">
+                        <input type="checkbox" name="tags[]" value="<?php echo $tag['id']; ?>"> <?php echo htmlspecialchars($tag['nome']); ?>
                     </label>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100" style="background-color: #ffc107; border: none; color: #000; font-weight: bold;">Cadastrar Produto</button>
+        <button type="submit" style="width: 100%; background-color: #ffc107; color: #000; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 16px;">CADASTRAR PRODUTO</button>
     </form>
+
+    <h3 style="color: #ffc107; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px;">Produtos Cadastrados</h3>
+
+    <?php if (empty($produtos)): ?>
+        <p style="text-align: center; opacity: 0.6;">Nenhum produto cadastrado no momento.</p>
+    <?php else: ?>
+        <table style="width: 100%; color: #fff; border-collapse: collapse;">
+            <thead>
+                <tr style="border-bottom: 2px solid #333; text-align: left;">
+                    <th style="padding: 12px;">Nome</th>
+                    <th style="padding: 12px;">Categoria</th>
+                    <th style="padding: 12px;">Preço</th>
+                    <th style="padding: 12px; text-align: center;">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($produtos as $prod): ?>
+                    <tr style="border-bottom: 1px solid #222;">
+                        <td style="padding: 12px;"><?php echo htmlspecialchars($prod['nome']); ?></td>
+                        <td style="padding: 12px;"><?php echo htmlspecialchars($prod['categoria']); ?></td>
+                        <td style="padding: 12px;">R$ <?php echo number_format($prod['preco'], 2, ',', '.'); ?></td>
+                        <td style="padding: 12px; text-align: center;">
+                            <a href="cadastro_produto.php?excluir=<?php echo $prod['id']; ?>" 
+                               style="background-color: #dc3545; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 14px;"
+                               onclick="return confirm('Tem certeza que deseja remover este produto?');">
+                               Excluir
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
+
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
