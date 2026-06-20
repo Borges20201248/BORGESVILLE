@@ -3,19 +3,9 @@ include 'conexao.php';
 include 'funcoes.php'; 
 
 try {
-    $sql_prod = "SELECT p.*, c.nome AS nome_categoria 
-                 FROM produtos p 
-                 INNER JOIN categorias c ON p.id_categoria = c.id 
-                 WHERE c.nome IN ('Whiskys', 'Vodkas', 'Licores')
-                 ORDER BY p.id DESC";
-                 
-    $stmt_prod = $pdo->query($sql_prod);
-    $all_produtos = $stmt_prod->fetchAll(PDO::FETCH_ASSOC);
-
-    $whiskys = processarEFiltrarProdutos($all_produtos, 'Whiskys');
-    $vodkas = processarEFiltrarProdutos($all_produtos, 'Vodkas');
-    $licores = processarEFiltrarProdutos($all_produtos, 'Licores');
-
+    $whiskys = processarEFiltrarProdutos($pdo, 1);
+    $vodkas  = processarEFiltrarProdutos($pdo, 2);
+    $licores = processarEFiltrarProdutos($pdo, 3);
 } catch (PDOException $e) {
     die("Erro ao buscar dados: " . $e->getMessage());
 }

@@ -1,5 +1,4 @@
 <?php
-
 function processarEFiltrarProdutos($pdo, $id_categoria) {
     $sql = "SELECT * FROM produtos WHERE id_categoria = :id_categoria";
     $stmt = $pdo->prepare($sql);
